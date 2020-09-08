@@ -56,6 +56,18 @@ castDebugLogger.loggerLevelByEvents = {
   'cast.framework.events.EventType.MEDIA_STATUS': 
     cast.framework.LoggerLevel.DEBUG
 };
+const LOG_TAG1 = 'Tag1';
+const LOG_TAG2 = 'Tag2';
+
+// Set verbosity level for custom tags
+castDebugLogger.loggerLevelByTags = {
+    [LOG_TAG1]: cast.framework.LoggerLevel.WARNING,
+    [LOG_TAG2]: cast.framework.LoggerLevel.DEBUG,
+};
+castDebugLogger.debug(LOG_TAG1, 'debug log from tag1');
+castDebugLogger.info(LOG_TAG1, 'info log from tag1');
+castDebugLogger.warn(LOG_TAG1, 'warn log from tag1');
+castDebugLogger.error(LOG_TAG1, 'error log from tag1');
 
 if (!castDebugLogger.loggerLevelByTags) {
   castDebugLogger.loggerLevelByTags = {};
