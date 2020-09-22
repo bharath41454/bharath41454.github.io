@@ -80,7 +80,7 @@ playerManager.addEventListener(
 
   playerManager.addEventListener(
     cast.framework.events.EventType.PLAY,
-    callbackcheck
+    window.callbackcheck
   );
 /**
  * Intercept the LOAD request to be able to read in a contentId and get data.
