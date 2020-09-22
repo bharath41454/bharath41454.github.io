@@ -1,3 +1,3 @@
-const callbackcheck = (event) => {
+function callbackcheck (event) {
     console.log("callback", event);
 }
