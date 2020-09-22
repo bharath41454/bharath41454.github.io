@@ -73,12 +73,11 @@ playerManager.addEventListener(
     }
 });
 
-playerManager.addEventListener(
-  cast.framework.events.EventType.LOAD_START,
-  callbackcheck
-  );
-
   if(callbackcheck){
+    playerManager.addEventListener(
+      cast.framework.events.EventType.LOAD_START,
+      callbackcheck
+      );
     playerManager.addEventListener(
     cast.framework.events.EventType.PLAY,
     window.callbackcheck
