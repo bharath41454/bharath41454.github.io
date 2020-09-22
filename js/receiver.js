@@ -78,10 +78,12 @@ playerManager.addEventListener(
   callbackcheck
   );
 
-  playerManager.addEventListener(
+  if(callbackcheck){
+    playerManager.addEventListener(
     cast.framework.events.EventType.PLAY,
     window.callbackcheck
   );
+}
 /**
  * Intercept the LOAD request to be able to read in a contentId and get data.
  */
