@@ -73,7 +73,12 @@ playerManager.addEventListener(
     }
 });
 
-  
+function playcall(event) {
+  console.log(event);
+}
+
+playerManager.addEventListener(
+  cast.framework.events.EventType.PLAY, playcall);
 /**
  * Intercept the LOAD request to be able to read in a contentId and get data.
  */
