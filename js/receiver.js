@@ -73,6 +73,15 @@ playerManager.addEventListener(
     }
 });
 
+playerManager.addEventListener(
+  cast.framework.events.EventType.LOAD_START,
+  callbackcheck
+  );
+
+  playerManager.addEventListener(
+    cast.framework.events.EventType.PLAY,
+    callbackcheck
+  );
 /**
  * Intercept the LOAD request to be able to read in a contentId and get data.
  */
