@@ -80,6 +80,11 @@ function playcall(event) {
 
 playerManager.addEventListener(
   cast.framework.events.EventType.PLAY, playcall);
+
+  playerManager.addEventListener(
+    cast.framework.events.EventType.SEEKING, playcall);
+  playerManager.addEventListener(
+    cast.framework.events.EventType.SEEKED, playcall);
 /**
  * Intercept the LOAD request to be able to read in a contentId and get data.
  */
