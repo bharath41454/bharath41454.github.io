@@ -1,6 +1,6 @@
 'use strict';
 
-import { CastQueue } from './queuing.js';
+// import { CastQueue } from './queuing.js';
 
 const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
@@ -64,6 +64,7 @@ castDebugLogger.loggerLevelByTags[LOG_RECEIVER_TAG] =
  */
 playerManager.addEventListener(
   cast.framework.events.EventType.ERROR, (event) => {
+    console.log("error", event);
     castDebugLogger.error(LOG_RECEIVER_TAG,
       'Detailed Error Code - ' + event.detailedErrorCode);
     if (event && event.detailedErrorCode == 905) {
