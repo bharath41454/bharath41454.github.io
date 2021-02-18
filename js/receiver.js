@@ -254,6 +254,32 @@ controls.assignButton(
   cast.framework.ui.ControlsButton.QUEUE_NEXT
 );
 
+playerManager.addEventListener(
+  cast.framework.events.EventType.PLAYER_LOAD_COMPLETE, () => {
+
+    // Create text tracks object
+    const textTracksManager = playerManager.getTextTracksManager();
+
+    // Create track 1 for English text
+    const track1 = textTracksManager.createTrack();
+    track1.trackContentType = 'text/vtt';
+    track1.trackContentId = 'https://iandevlin.github.io/mdn/video-player-with-captions/subtitles/vtt/sintel-en.vtt';
+    track1.language = 'en';
+
+    // Create track 2 for Spanish text
+    const track2 = textTracksManager.createTrack();
+    const track2Id = track2.trackId;
+    track2.trackContentType = 'text/vtt';
+    track2.trackContentId = 'https://iandevlin.github.io/mdn/video-player-with-captions/subtitles/vtt/sintel-en.vtt';
+    track2.language = 'spa';
+
+    // Add tracks
+    textTracksManager.addTracks([track1, track2]);
+
+    // Set the first matching language text track to be active
+    textTracksManager.setActiveByLanguage('en');
+  });
+
 context.start({
   queue: new CastQueue(),
   playbackConfig: playbackConfig,
